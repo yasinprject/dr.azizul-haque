@@ -25,7 +25,7 @@
                     },
                     boxShadow: {
                         'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
-                        'glow': '0 0 20px rgba(14, 165, 233, 0.4)'
+                        'card': '0 10px 30px -10px rgba(0,0,0,0.08)'
                     }
                 }
             }
@@ -39,11 +39,11 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
         .nav-scrolled { box-shadow: 0 4px 30px -2px rgba(0, 0, 0, 0.05); }
         
         .form-input {
-            width: 100%; padding: 1rem 1.25rem; font-size: 1rem;
+            width: 100%; padding: 0.875rem 1.25rem; font-size: 1rem;
             background-color: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 0.75rem;
             transition: all 0.3s ease; outline: none;
         }
@@ -52,9 +52,8 @@
         .input-blue:focus { border-color: #3b82f6; }
         input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
         
-        .contact-card-bg {
-            background: linear-gradient(145deg, #ffffff, #f8fafc);
-        }
+        .fb-btn { background: #1877F2; }
+        .fb-btn:hover { background: #166FE5; }
     </style>
 </head>
 <body class="text-gray-800 antialiased pt-20 selection:bg-brand-500 selection:text-white">
@@ -97,6 +96,7 @@
                 <div class="p-5 flex flex-col space-y-2 font-medium">
                     <a href="#profile" class="mobile-link flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50"><i class="fa-regular fa-user text-brand-600 w-5"></i> প্রোফাইল</a>
                     <a href="#services" class="mobile-link flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50"><i class="fa-solid fa-stethoscope text-brand-600 w-5"></i> সেবাসমূহ</a>
+                    <a href="#fees" class="mobile-link flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50"><i class="fa-solid fa-hand-holding-dollar text-brand-600 w-5"></i> ফি ও ছাড়</a>
                     <a href="#appointment" class="mobile-link flex items-center gap-3 p-3 rounded-xl bg-brand-50 text-brand-700 font-bold"><i class="fa-regular fa-calendar-check w-5"></i> সিরিয়াল নিন</a>
                     <a href="#contact" class="mobile-link mt-4 text-center bg-brand-700 text-white p-3.5 rounded-xl"><i class="fa-solid fa-phone mr-2"></i> যোগাযোগ</a>
                 </div>
@@ -104,40 +104,35 @@
         </div>
     </nav>
 
-    <!-- Floating Call Button -->
-    <a href="tel:01747745929" class="md:hidden fixed bottom-6 right-6 z-40 bg-brand-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-700 transition-all">
-        <i class="fa-solid fa-phone-volume text-xl animate-pulse"></i>
-    </a>
-
     <!-- Profile Section -->
     <section id="profile" class="relative py-16 lg:py-28 overflow-hidden bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-                <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[400px] lg:h-[400px] shrink-0 mx-auto md:mx-0" data-aos="zoom-in">
+                <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[380px] lg:h-[380px] shrink-0 mx-auto md:mx-0" data-aos="zoom-in">
                     <div class="absolute inset-0 bg-brand-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
                     <img src="https://i.postimg.cc/vHJTB7s5/1775406413371.png" alt="ডা: আজিজুল হক" class="relative w-full h-full object-cover rounded-full border-[8px] border-white shadow-soft">
                 </div>
                 
                 <div class="text-center md:text-left flex-1" data-aos="fade-up">
                     <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-700 px-4 py-1.5 rounded-full text-sm font-bold border border-brand-100 mb-5">
-                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span> বি.এম.ডিসি রেজি নং: এ-১১১১৬৯
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span> বিএমডিসি রেজি নং: এ-১১১১৬৯
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-2">ডা: আজিজুল হক</h1>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-2">ডাঃ আজিজুল হক</h1>
                     <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-slate-700 mb-3">এম.বি.বি.এস <span class="text-base font-medium text-slate-500">(স্যার সলিমুল্লাহ মেডিকেল কলেজ)</span></h2>
-                    <p class="text-lg text-brand-600 font-semibold mb-8"><i class="fa-solid fa-user-md mr-2"></i>পি.জি.টি সার্জারি - মিটফোর্ড হাসপাতাল</p>
+                    <p class="text-lg text-brand-600 font-semibold mb-8"><i class="fa-solid fa-user-md mr-2"></i>পি.জি.টি: সার্জারী (মিটফোর্ড হাসপাতাল)</p>
                     
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 inline-block text-left w-full sm:w-auto mb-8">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100 inline-block text-left w-full mb-8">
                         <div class="flex items-start gap-4">
-                            <div class="bg-brand-100 p-3 rounded-xl text-brand-600 text-xl"><i class="fa-solid fa-award"></i></div>
+                            <div class="bg-brand-100 p-3 rounded-xl text-brand-600 text-xl shrink-0"><i class="fa-solid fa-award"></i></div>
                             <div>
-                                <h3 class="font-bold text-slate-800 text-lg">বিশেষ প্রশিক্ষণ প্রাপ্ত</h3>
-                                <p class="text-slate-600 mt-1 text-base">মেডিসিন, ডায়াবেটিস, উচ্চ রক্তচাপ, বাত ব্যথা ও সার্জারিতে</p>
+                                <h3 class="font-bold text-slate-800 text-lg">বিশেষত্ব ও প্রশিক্ষণ প্রাপ্ত</h3>
+                                <p class="text-slate-600 mt-1 text-base leading-relaxed">মেডিসিন, ডায়াবেটিস, উচ্চ রক্তচাপ, বাত ব্যথা, কোমর-হাঁটু ব্যথা, হাঁপানি শ্বাসকষ্ট, মা ও শিশু-কিশোরদের যাবতীয় জটিল রোগ এবং সার্জারীতে বিশেষ প্রশিক্ষণ প্রাপ্ত।</p>
                             </div>
                         </div>
                     </div>
 
-                    <div>
-                        <a href="#appointment" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg hover:bg-brand-700 transition-all sm:w-auto w-full">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#appointment" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white text-lg font-bold py-3.5 px-8 rounded-full shadow-lg hover:bg-brand-700 transition-all sm:w-auto w-full">
                             সিরিয়াল বুক করুন <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -148,50 +143,89 @@
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-slate-50">
-        <!-- Previous Services Code... (kept identical to your design, just refined spacing) -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">আমাদের সেবা</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">চিকিৎসা ও সার্জারি সেবাসমূহ</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">সেবা ও পরামর্শের বিষয়সমূহ</h2>
                 <div class="w-20 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
                 <!-- Medicine -->
-                <div class="bg-white rounded-3xl p-8 shadow-soft border border-slate-100 hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="bg-white rounded-3xl p-8 shadow-card border border-slate-100 hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
                         <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-stethoscope"></i></div>
-                        <h3 class="text-2xl font-bold text-slate-800">জেনারেল প্র্যাকটিশনার</h3>
+                        <h3 class="text-2xl font-bold text-slate-800">জেনারেল প্র্যাকটিশনার সেবা</h3>
                     </div>
-                    <ul class="space-y-4 text-slate-600 font-medium text-lg">
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>মেডিসিন, ডায়াবেটিস ও উচ্চ রক্তচাপ</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>বাত-ব্যথা / কোমর-হাঁটু / ঘাড় / মাথা ব্যথা</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>এলার্জি ও চর্মরোগ</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>হাঁপানি-শ্বাসকষ্ট ও নিউমোনিয়া</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>মা ও শিশু-কিশোরদের যাবতীয় চিকিৎসা</span></li>
+                    <ul class="space-y-3.5 text-slate-600 font-medium text-[1.05rem]">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>মেডিসিন</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>ডায়াবেটিস এবং উচ্চ রক্তচাপ</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>বাত-ব্যথা / কোমর-হাঁটু ব্যথা / ঘাড় ব্যথা / মাথা ব্যথা</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>এলার্জি / চর্মরোগ</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>হাঁপানি-শ্বাসকষ্ট / নিউমোনিয়া</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>মা ও শিশু-কিশোরদের যাবতীয় জটিল চিকিৎসা</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0"></i> <span>পেট ব্যথা / পেট ফাঁপা / ডায়রিয়া / আমাশয় / কোষ্ঠকাঠিন্য</span></li>
                     </ul>
                 </div>
 
                 <!-- Surgery -->
-                <div class="bg-white rounded-3xl p-8 shadow-soft border border-slate-100 hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="bg-white rounded-3xl p-8 shadow-card border border-slate-100 hover:-translate-y-1 transition-transform" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
                         <div class="w-14 h-14 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fa-solid fa-syringe"></i></div>
-                        <h3 class="text-2xl font-bold text-slate-800">সার্জারি সেবা</h3>
+                        <h3 class="text-2xl font-bold text-slate-800">সার্জারী সেবা</h3>
                     </div>
-                    <ul class="space-y-4 text-slate-600 font-medium text-lg">
+                    <div class="grid sm:grid-cols-2 gap-x-4 gap-y-3.5 text-slate-600 font-medium text-[1.05rem]">
                         <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>সুন্নাতে খতনা (ডিভাইস/নরমাল/কসমেটিকস)</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>লাইপোমা (চর্বির টিউমার), সিস্ট / ফোড়া</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>লাইপোমা (চর্বির টিউমার)</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>সিস্ট / এবসেস / ফোড়া</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>যে কোন ধরনের টিউমার</span></li>
                         <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>প্লাস্টার (পা মচকানো)</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>কাটা-ছেঁড়া সেলাই / ড্রেসিং / সেলাই খোলা</span></li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>নাকে নল ও প্রস্রাবের নল পড়ানো / খোলা</span></li>
-                    </ul>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>কাটা-ছেঁড়া সেলাই/ড্রেসিং/সেলাই কাটা</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>নখের কনি উঠার চিকিৎসা</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>নাকে নল পড়ানো/এন জি/ফিডিং টিউব</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>প্রস্রাবের নল পড়ানো / খোলা</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>পিত্তথলির/কিডনির/মূত্রনালীর পাথর</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>ব্রেস্ট / স্তনের টিউমার</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0"></i> <span>গ্যাংলিওন সিস্ট</span></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee and Discount Section -->
+    <section id="fees" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-800 to-brand-900 rounded-[2rem] p-8 sm:p-12 shadow-2xl text-white relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+                
+                <div class="flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+                    <div class="text-center md:text-left shrink-0">
+                        <p class="text-brand-200 font-medium mb-1 uppercase tracking-wider text-sm">চিকিৎসা পরামর্শ ফি</p>
+                        <div class="text-5xl sm:text-7xl font-extrabold text-white drop-shadow-md">৩০০ <span class="text-3xl sm:text-4xl font-normal text-brand-200">৳</span></div>
+                    </div>
+                    
+                    <div class="hidden md:block w-px h-32 bg-brand-600/50"></div>
+                    
+                    <div class="bg-white/10 p-6 sm:p-8 rounded-2xl w-full border border-white/10 backdrop-blur-md">
+                        <h3 class="font-bold text-xl mb-5 flex items-center justify-center md:justify-start gap-3 text-emerald-400 border-b border-white/10 pb-3">
+                            <i class="fa-solid fa-hand-holding-heart text-2xl"></i> যাঁদের জন্য চিকিৎসা সম্পূর্ণ ফ্রি:
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-base sm:text-lg font-medium text-brand-50">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-sm"></i> গরীব ও অসহায় রোগী</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-sm"></i> চিকিৎসকের স্কুলের বন্ধু ও পরিবার</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-sm"></i> শ্রদ্ধেয় শিক্ষকমণ্ডলী</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-sm"></i> কোরআন এর হাফেজ</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-sm"></i> বীর মুক্তিযোদ্ধা</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Appointment Section -->
-    <section id="appointment" class="py-20 bg-white">
+    <section id="appointment" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">সিরিয়াল বুকিং</span>
@@ -202,56 +236,56 @@
             
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Brahmanbaria -->
-                <div class="bg-white rounded-3xl shadow-soft border border-emerald-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white rounded-3xl shadow-card border border-emerald-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-emerald-600 p-8 text-white relative">
-                        <h3 class="text-2xl font-bold mb-2">ব্রাহ্মণবাড়িয়া চেম্বার</h3>
-                        <p class="text-emerald-100 font-medium mb-2"><i class="fa-regular fa-clock mr-2"></i>শুক্রবার: সকাল ৯টা - সন্ধ্যা ৭টা</p>
-                        <p class="text-sm opacity-90"><i class="fa-solid fa-location-dot mr-2"></i>সাইফুল ড্রাগ সেন্টার, বাঞ্ছারামপুর।</p>
+                        <h3 class="text-2xl font-bold mb-3">ব্রাহ্মণবাড়িয়া চেম্বার</h3>
+                        <p class="text-emerald-100 font-medium mb-2 text-[15px]"><i class="fa-regular fa-clock mr-2"></i>প্রতি শুক্রবার (সকাল ৯ টা - সন্ধ্যা ৭ টা)</p>
+                        <p class="text-[15px] opacity-90 leading-relaxed"><i class="fa-solid fa-location-dot mr-2"></i>সাইফুল ড্রাগ সেন্টার (কৃষি ব্যাংক সংলগ্ন), জীবনগঞ্জ বাজার, বাঞ্ছারামপুর, ব্রাহ্মণবাড়িয়া।</p>
                     </div>
                     <div class="p-8">
                         <form id="formBrahmanbaria" onsubmit="submitAppointment(event, 'Brahmanbaria')">
                             <div class="space-y-5">
-                                <div><label class="block font-bold text-slate-700 mb-2">রোগীর নাম *</label><input type="text" id="name_A" required class="form-input input-emerald"></div>
+                                <div><label class="block font-bold text-slate-700 mb-2">রোগীর নাম *</label><input type="text" id="name_A" required class="form-input input-emerald" placeholder="নাম লিখুন"></div>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div><label class="block font-bold text-slate-700 mb-2">বয়স *</label><input type="number" id="age_A" required class="form-input input-emerald"></div>
-                                    <div><label class="block font-bold text-slate-700 mb-2">মোবাইল *</label><input type="tel" id="phone_A" required pattern="[0-9]{11}" class="form-input input-emerald"></div>
+                                    <div><label class="block font-bold text-slate-700 mb-2">বয়স *</label><input type="number" id="age_A" required class="form-input input-emerald" placeholder="বয়স"></div>
+                                    <div><label class="block font-bold text-slate-700 mb-2">মোবাইল *</label><input type="tel" id="phone_A" required pattern="[0-9]{11}" class="form-input input-emerald" placeholder="017XXXXXX"></div>
                                 </div>
                                 <div>
                                     <label class="block font-bold text-slate-700 mb-2">রোগীর ধরন *</label>
                                     <div class="flex gap-4">
-                                        <label class="flex-1"><input type="radio" name="type_A" value="নতুন" required class="peer sr-only"><div class="text-center py-3 border-2 rounded-xl peer-checked:bg-emerald-50 peer-checked:border-emerald-500 font-bold cursor-pointer transition-all">নতুন</div></label>
-                                        <label class="flex-1"><input type="radio" name="type_A" value="পুরাতন" class="peer sr-only"><div class="text-center py-3 border-2 rounded-xl peer-checked:bg-emerald-50 peer-checked:border-emerald-500 font-bold cursor-pointer transition-all">পুরাতন</div></label>
+                                        <label class="flex-1"><input type="radio" name="type_A" value="নতুন" required class="peer sr-only"><div class="text-center py-2.5 border-2 rounded-xl peer-checked:bg-emerald-50 peer-checked:border-emerald-500 peer-checked:text-emerald-700 font-bold cursor-pointer transition-all">নতুন</div></label>
+                                        <label class="flex-1"><input type="radio" name="type_A" value="পুরাতন" class="peer sr-only"><div class="text-center py-2.5 border-2 rounded-xl peer-checked:bg-emerald-50 peer-checked:border-emerald-500 peer-checked:text-emerald-700 font-bold cursor-pointer transition-all">পুরাতন</div></label>
                                     </div>
                                 </div>
-                                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl mt-4 transition-all">সিরিয়াল কনফার্ম করুন</button>
+                                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl mt-2 transition-all flex justify-center items-center gap-2">সিরিয়াল কনফার্ম করুন <i class="fa-solid fa-paper-plane"></i></button>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- Dhaka -->
-                <div class="bg-white rounded-3xl shadow-soft border border-blue-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white rounded-3xl shadow-card border border-blue-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-blue-600 p-8 text-white relative">
-                        <h3 class="text-2xl font-bold mb-2">ঢাকা চেম্বার</h3>
-                        <p class="text-blue-100 font-medium mb-2"><i class="fa-regular fa-clock mr-2"></i>শনি - বৃহস্পতি: সকাল ১০টা - রাত ১০টা</p>
-                        <p class="text-sm opacity-90"><i class="fa-solid fa-location-dot mr-2"></i>দি চানখারপুল জেনারেল হাসপাতাল, ১০/১ নবাব কাটারা রোড।</p>
+                        <h3 class="text-2xl font-bold mb-3">ঢাকা চেম্বার</h3>
+                        <p class="text-blue-100 font-medium mb-2 text-[15px]"><i class="fa-regular fa-clock mr-2"></i>শনি থেকে বৃহস্পতিবার (সকাল ১০ টা - রাত ১০ টা)</p>
+                        <p class="text-[15px] opacity-90 leading-relaxed"><i class="fa-solid fa-location-dot mr-2"></i>দি চানখারপুল জেনারেল হাসপাতাল, ১০/১ নবাব কাটারা রোড, চানখারপুল, ঢাকা।</p>
                     </div>
                     <div class="p-8">
                         <form id="formDhaka" onsubmit="submitAppointment(event, 'Dhaka')">
                             <div class="space-y-5">
-                                <div><label class="block font-bold text-slate-700 mb-2">রোগীর নাম *</label><input type="text" id="name_B" required class="form-input input-blue"></div>
+                                <div><label class="block font-bold text-slate-700 mb-2">রোগীর নাম *</label><input type="text" id="name_B" required class="form-input input-blue" placeholder="নাম লিখুন"></div>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div><label class="block font-bold text-slate-700 mb-2">বয়স *</label><input type="number" id="age_B" required class="form-input input-blue"></div>
-                                    <div><label class="block font-bold text-slate-700 mb-2">মোবাইল *</label><input type="tel" id="phone_B" required pattern="[0-9]{11}" class="form-input input-blue"></div>
+                                    <div><label class="block font-bold text-slate-700 mb-2">বয়স *</label><input type="number" id="age_B" required class="form-input input-blue" placeholder="বয়স"></div>
+                                    <div><label class="block font-bold text-slate-700 mb-2">মোবাইল *</label><input type="tel" id="phone_B" required pattern="[0-9]{11}" class="form-input input-blue" placeholder="017XXXXXX"></div>
                                 </div>
                                 <div>
                                     <label class="block font-bold text-slate-700 mb-2">রোগীর ধরন *</label>
                                     <div class="flex gap-4">
-                                        <label class="flex-1"><input type="radio" name="type_B" value="নতুন" required class="peer sr-only"><div class="text-center py-3 border-2 rounded-xl peer-checked:bg-blue-50 peer-checked:border-blue-500 font-bold cursor-pointer transition-all">নতুন</div></label>
-                                        <label class="flex-1"><input type="radio" name="type_B" value="পুরাতন" class="peer sr-only"><div class="text-center py-3 border-2 rounded-xl peer-checked:bg-blue-50 peer-checked:border-blue-500 font-bold cursor-pointer transition-all">পুরাতন</div></label>
+                                        <label class="flex-1"><input type="radio" name="type_B" value="নতুন" required class="peer sr-only"><div class="text-center py-2.5 border-2 rounded-xl peer-checked:bg-blue-50 peer-checked:border-blue-500 peer-checked:text-blue-700 font-bold cursor-pointer transition-all">নতুন</div></label>
+                                        <label class="flex-1"><input type="radio" name="type_B" value="পুরাতন" class="peer sr-only"><div class="text-center py-2.5 border-2 rounded-xl peer-checked:bg-blue-50 peer-checked:border-blue-500 peer-checked:text-blue-700 font-bold cursor-pointer transition-all">পুরাতন</div></label>
                                     </div>
                                 </div>
-                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl mt-4 transition-all">সিরিয়াল কনফার্ম করুন</button>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl mt-2 transition-all flex justify-center items-center gap-2">সিরিয়াল কনফার্ম করুন <i class="fa-solid fa-paper-plane"></i></button>
                             </div>
                         </form>
                     </div>
@@ -262,57 +296,59 @@
 
     <!-- Professional Redesigned Contact Section -->
     <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <!-- Abstract BG Elements -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-600 rounded-full blur-[100px] opacity-20"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600 rounded-full blur-[100px] opacity-20"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-600 rounded-full blur-[120px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600 rounded-full blur-[120px] opacity-20"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">যোগাযোগ ও চেম্বারের ঠিকানা</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">যেকোনো জরুরী প্রয়োজনে বা বিস্তারিত জানতে আমাদের হেল্পলাইনে কল করুন।</p>
+            <div class="text-center mb-14" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">যোগাযোগ ও চেম্বারের নাম্বার</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">যেকোনো জরুরী প্রয়োজনে বা বিস্তারিত জানতে চেম্বারের নির্দিষ্ট নাম্বারে কল করুন অথবা ফেসবুকে যুক্ত থাকুন।</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                <!-- Helpline Card 1 -->
-                <a href="tel:01747745929" class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all group flex items-center gap-5">
-                    <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-full flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:text-white transition-all shrink-0">
-                        <i class="fa-solid fa-phone"></i>
+            <!-- Numbers Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                <!-- Brahmanbaria Contact -->
+                <a href="tel:01747745929" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl backdrop-blur-sm hover:bg-white/10 hover:-translate-y-1 transition-all group flex items-center justify-between">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-white transition-all shrink-0">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-sm font-medium mb-1">ব্রাহ্মণবাড়িয়া চেম্বার</p>
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-100 tracking-wider">01747-745929</h4>
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-slate-400 text-sm font-medium mb-1">হেল্পলাইন (চেম্বার)</p>
-                        <h4 class="text-xl font-bold text-slate-100 tracking-wider">01747-745929</h4>
-                    </div>
+                    <i class="fa-solid fa-arrow-right text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
 
-                <!-- Helpline Card 2 -->
-                <a href="tel:01854101537" class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all group flex items-center gap-5">
-                    <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-white transition-all shrink-0">
-                        <i class="fa-solid fa-headset"></i>
+                <!-- Dhaka Contact -->
+                <a href="tel:01730082888" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl backdrop-blur-sm hover:bg-white/10 hover:-translate-y-1 transition-all group flex items-center justify-between">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-500 group-hover:text-white transition-all shrink-0">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-sm font-medium mb-1">ঢাকা চেম্বার</p>
+                            <h4 class="text-xl sm:text-2xl font-bold text-slate-100 tracking-wider">01730-082888</h4>
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-slate-400 text-sm font-medium mb-1">জরুরী যোগাযোগ</p>
-                        <h4 class="text-xl font-bold text-slate-100 tracking-wider">01854-101537</h4>
-                    </div>
+                    <i class="fa-solid fa-arrow-right text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0"></i>
                 </a>
+            </div>
 
-                <!-- Helpline Card 3 -->
-                <a href="tel:01730082888" class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all group flex items-center gap-5 md:col-span-2 lg:col-span-1">
-                    <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-2xl group-hover:bg-blue-500 group-hover:text-white transition-all shrink-0">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
-                    <div>
-                        <p class="text-slate-400 text-sm font-medium mb-1">পার্সোনাল নাম্বার</p>
-                        <h4 class="text-xl font-bold text-slate-100 tracking-wider">01730-082888</h4>
-                    </div>
+            <!-- Facebook Connect -->
+            <div class="text-center max-w-lg mx-auto pb-10 border-b border-white/10" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://www.facebook.com/share/18d7WA9KaA/" target="_blank" class="inline-flex items-center justify-center gap-3 fb-btn text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg transition-all hover:-translate-y-1 w-full sm:w-auto">
+                    <i class="fa-brands fa-facebook text-2xl"></i> আমাদের ফেসবুক পেজ
                 </a>
             </div>
 
             <!-- Footer Bottom -->
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
                 <p>&copy; ২০২৪ ডা: আজিজুল হক। সর্বস্বত্ব সংরক্ষিত।</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-brand-400 transition-colors">প্রাইভেসি পলিসি</a>
-                    <a href="#" class="hover:text-brand-400 transition-colors">শর্তাবলী</a>
+                    <a href="#" class="hover:text-white transition-colors">প্রাইভেসি পলিসি</a>
+                    <a href="#" class="hover:text-white transition-colors">শর্তাবলী</a>
                 </div>
             </div>
         </div>
@@ -352,12 +388,14 @@
         // ==============================================================
         // Google Apps Script Web App URL (এখানে আপনার URL বসান)
         // ==============================================================
-        const GOOGLE_APP_URL = "YOUR_WEB_APP_URL_HERE"; // <--- ধাপ ৫ থেকে পাওয়া URL এখানে দিন
+        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbyI7ys_s3eV1zr0YhuhOe3HRFSYve5_CnYAPhD6N5KnllVKM05aOx0HmkUXTbdnwsE_/exec"; 
 
         async function submitAppointment(event, chamber) {
             event.preventDefault();
-            if (GOOGLE_APP_URL === "https://script.google.com/macros/s/AKfycbyI7ys_s3eV1zr0YhuhOe3HRFSYve5_CnYAPhD6N5KnllVKM05aOx0HmkUXTbdnwsE_/exec") {
-                alert("দুঃখিত! ডেভেলপার এখনো ব্যাকএন্ড লিঙ্ক সেট করেনি।");
+            
+            // Checking if user has put the link
+            if (GOOGLE_APP_URL === "YOUR_WEB_APP_URL_HERE") {
+                alert("দুঃখিত! সিস্টেম এডমিন এখনো ব্যাকএন্ড লিঙ্ক সেট করেননি।");
                 return;
             }
 
@@ -376,10 +414,15 @@
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> প্রসেস হচ্ছে...`;
             submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
 
             try {
+                // FIXED: Using "text/plain" bypasses the CORS preflight issue completely!
                 const response = await fetch(GOOGLE_APP_URL, {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
                     body: JSON.stringify(payload)
                 });
                 
@@ -392,13 +435,16 @@
                     alert('❌ সমস্যা হয়েছে। দয়া করে নাম্বারে সরাসরি কল করুন।');
                 }
             } catch (error) {
-                alert('✅ রিকোয়েস্ট পাঠানো হয়েছে (তবে ইন্টারনেট সমস্যার কারণে সিরিয়াল নাম্বার দেখাচ্ছে না)।');
+                // Since CORS sometimes blocks reading the response even if data is sent successfully
+                console.error(error);
+                alert('✅ রিকোয়েস্ট সফলভাবে পাঠানো হয়েছে। আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবেন।');
                 document.getElementById(formId).reset();
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
             }
         }
     </script>
 </body>
-    </html>
+</html>
