@@ -8,7 +8,7 @@
     <!-- Open Graph Meta Tags for Premium Link Sharing Overview -->
     <meta property="og:title" content="চিকিৎসা সেবা | ডা: আজিজুল হক">
     <meta property="og:description" content="মেডিসিন, ডায়াবেটিস, উচ্চ রক্তচাপ ও সার্জারী বিশেষজ্ঞ। অনলাইনে সিরিয়াল বুক করুন এবং বিস্তারিত তথ্য জানুন।">
-    <meta property="og:image" content="https://i.postimg.cc/V69j6J8c/IMG-20260426-104655-868.png">
+    <meta property="og:image" content="https://i.postimg.cc/cCD8nphb/1777165034889.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
@@ -134,12 +134,47 @@
             to { transform: rotate(360deg); }
         }
         .animate-spin-slow { animation: spin-slow 15s linear infinite; }
+
+        /* =========================================
+           ক্যাটাগরি অনুযায়ী কালার এনিমেশন 
+           ========================================= */
+
+        @keyframes glow-medicine {
+            0%, 100% { box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); }
+            50% { box-shadow: 0 10px 40px -5px rgba(59, 130, 246, 0.4); border-color: rgba(59, 130, 246, 0.6); }
+        }
+        .category-anim-medicine { animation: glow-medicine 3.5s ease-in-out infinite; }
+
+        @keyframes text-color-medicine {
+            0%, 100% { color: #1e40af; } 
+            50% { color: #3b82f6; } 
+        }
+        .text-anim-medicine { animation: text-color-medicine 3.5s infinite; }
+
+        @keyframes glow-surgery {
+            0%, 100% { box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.2); }
+            50% { box-shadow: 0 10px 40px -5px rgba(20, 184, 166, 0.4); border-color: rgba(20, 184, 166, 0.6); }
+        }
+        .category-anim-surgery { animation: glow-surgery 3.5s ease-in-out infinite; }
+
+        @keyframes text-color-surgery {
+            0%, 100% { color: #115e59; } 
+            50% { color: #14b8a6; } 
+        }
+        .text-anim-surgery { animation: text-color-surgery 3.5s infinite; }
+
+        @keyframes glow-emerald {
+            0%, 100% { box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
+            50% { box-shadow: 0 10px 40px -5px rgba(16, 185, 129, 0.4); border-color: rgba(16, 185, 129, 0.6); }
+        }
+        .category-anim-emerald { animation: glow-emerald 3.5s ease-in-out infinite; }
+
     </style>
 </head>
 <body class="text-gray-800 antialiased pt-20 selection:bg-brand-500 selection:text-white relative">
 
-    <!-- Global Leather Texture Overlay -->
-    <div class="fixed inset-0 pointer-events-none z-[9999] opacity-[0.25] mix-blend-multiply" style="background-image: url('https://www.transparenttextures.com/patterns/leather.png');"></div>
+    <!-- Global Leather Texture Overlay (Vibe Increased) -->
+    <div class="fixed inset-0 pointer-events-none z-[9999] opacity-[0.4] mix-blend-multiply contrast-125" style="background-image: url('https://www.transparenttextures.com/patterns/leather.png');"></div>
 
     <!-- Background Floating Blobs (New Animation) -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
@@ -260,10 +295,10 @@
                 <div id="services-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 items-stretch pb-4">
                     
                     <!-- Card 1: Medicine -->
-                    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] p-8 sm:p-10 shadow-card border border-slate-100/50 hover:shadow-2xl transition-all duration-500 group relative z-20 hover:-translate-y-2">
+                    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] p-8 sm:p-10 shadow-card border border-slate-100/50 hover:shadow-2xl transition-all duration-500 group relative z-20 hover:-translate-y-2 category-anim-medicine">
                         <div class="flex items-center gap-4 mb-7 pb-5 border-b border-slate-100">
                             <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-12 transition-all duration-500"><i class="fa-solid fa-stethoscope"></i></div>
-                            <h3 class="text-2xl font-bold text-slate-800">জেনারেল প্র্যাকটিশনার সেবা</h3>
+                            <h3 class="text-2xl font-bold text-slate-800 text-anim-medicine">জেনারেল প্র্যাকটিশনার সেবা</h3>
                         </div>
                         <ul class="space-y-4 text-slate-600 font-medium text-[1.05rem]">
                             <li class="flex items-start gap-3 hover:translate-x-2 transition-transform duration-300"><i class="fa-solid fa-check-circle text-blue-500 mt-1 shrink-0 group-hover:animate-pulse"></i> <span>মেডিসিন</span></li>
@@ -277,10 +312,10 @@
                     </div>
 
                     <!-- Card 2: Surgery -->
-                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] p-8 sm:p-10 shadow-card border border-slate-100/50 hover:shadow-2xl transition-all duration-500 group relative z-20 hover:-translate-y-2">
+                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] p-8 sm:p-10 shadow-card border border-slate-100/50 hover:shadow-2xl transition-all duration-500 group relative z-20 hover:-translate-y-2 category-anim-surgery">
                         <div class="flex items-center gap-4 mb-7 pb-5 border-b border-slate-100">
                             <div class="w-14 h-14 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-teal-600 group-hover:text-white group-hover:-rotate-12 transition-all duration-500"><i class="fa-solid fa-syringe"></i></div>
-                            <h3 class="text-2xl font-bold text-slate-800">সার্জারী সেবা</h3>
+                            <h3 class="text-2xl font-bold text-slate-800 text-anim-surgery">সার্জারী সেবা</h3>
                         </div>
                         <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4 text-slate-600 font-medium text-[1.05rem]">
                             <li class="flex items-start gap-3 hover:translate-x-2 transition-transform duration-300"><i class="fa-solid fa-check-circle text-teal-500 mt-1 shrink-0 group-hover:animate-pulse"></i> <span>সুন্নাতে খতনা (ডিভাইস/নরমাল/কসমেটিকস)</span></li>
@@ -357,7 +392,7 @@
                 <div id="appointment-slider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 items-stretch pb-4">
                     
                     <!-- Brahmanbaria -->
-                    <div data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] shadow-card border border-emerald-100 overflow-hidden transform hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative z-20 group">
+                    <div data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] shadow-card border border-emerald-100 overflow-hidden transform hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative z-20 group category-anim-emerald">
                         <div class="bg-emerald-600 p-8 text-white relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                             <h3 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-house-medical text-emerald-200 group-hover:rotate-12 transition-transform"></i> ব্রাহ্মণবাড়িয়া চেম্বার</h3>
@@ -394,7 +429,7 @@
                     </div>
 
                     <!-- Dhaka -->
-                    <div data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] shadow-card border border-blue-100 overflow-hidden transform hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative z-20 group">
+                    <div data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300" class="w-full shrink-0 snap-center bg-white/95 rounded-[2rem] shadow-card border border-blue-100 overflow-hidden transform hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative z-20 group category-anim-medicine">
                         <div class="bg-blue-600 p-8 text-white relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                             <h3 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-building-user text-blue-200 group-hover:-rotate-12 transition-transform"></i> ঢাকা চেম্বার</h3>
@@ -454,7 +489,7 @@
             <!-- Numbers Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
                 <!-- Brahmanbaria Contact -->
-                <a href="tel:01747745929" data-aos="fade-up" data-aos-delay="100" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[1.5rem] backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,_185,_129,_0.2)] transition-all duration-500 group flex items-center justify-between shadow-glass">
+                <a href="tel:01747745929" data-aos="fade-up" data-aos-delay="100" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[1.5rem] backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(16,_185,_129,_0.2)] transition-all duration-500 group flex items-center justify-between shadow-glass category-anim-emerald">
                     <div class="flex items-center gap-5">
                         <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700 shrink-0">
                             <i class="fa-solid fa-phone-volume group-hover:animate-wiggle"></i>
@@ -470,7 +505,7 @@
                 </a>
 
                 <!-- Dhaka Contact -->
-                <a href="tel:01730082888" data-aos="fade-up" data-aos-delay="300" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[1.5rem] backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(59,_130,_246,_0.2)] transition-all duration-500 group flex items-center justify-between shadow-glass">
+                <a href="tel:01730082888" data-aos="fade-up" data-aos-delay="300" class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-[1.5rem] backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(59,_130,_246,_0.2)] transition-all duration-500 group flex items-center justify-between shadow-glass category-anim-medicine">
                     <div class="flex items-center gap-5">
                         <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-500 group-hover:text-white group-hover:rotate-[360deg] transition-all duration-700 shrink-0">
                             <i class="fa-solid fa-phone-volume group-hover:animate-wiggle"></i>
@@ -618,7 +653,7 @@
         // ==============================================================
         // Google Apps Script Web App URL
         // ==============================================================
-        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbyl8Wr4May2e7A0iN2UFIHxXYDn8p3XRuZBCo1oSe-XSpoMMhzfp23BCIiXkt4Lgdac/exec"; 
+        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbxB_KI0mEXDJp2uKdwYxQcARZR4l3uTUOaIfPwI7VgBfjCY37nS_clSpTSxwhfvF50H/exec"; 
 
         async function submitAppointment(event, chamber) {
             event.preventDefault();
@@ -672,4 +707,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
